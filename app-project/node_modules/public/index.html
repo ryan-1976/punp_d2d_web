@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE>
+<html ng-app="testApp"> 
+<head>
+<title>contact list app</title>
+<link rel="stlyesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>南无阿弥陀佛</h1>
+		<input ng-model="test">
+		{{test}}
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>监控量</th>
+					<th>值</th>
+					<th>单位</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input class="form-control" ng-model="contact.name"></td>
+					<td><input class="form-control" ng-model="contact.value"></td>
+					<td><input class="form-control" ng-model="contact.union"></td>
+				</tr>
+				<tr ng-repeat="contact in contactlist">
+					<td>{{contact.name}}</td>
+					<td>{{contact.value}}</td>
+					<td>{{contact.union1}}</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+
+	<div ng-controller="roomCtrl">
+	{{server_data}}
+	</div>
+
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="controllers/controller.js"></script>
+	<script src="controllers/testApp.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html ng-app="UserInfoModule">
+<head>
+<meta charset="UTF-8">
+<!-- <link rel="stylesheet" href="../res/bootstrap/bootstrap.css">
+<script type="text/javascript" src="../res/angularJs/angular-1.4.min.js"></script>
+<script type="text/javascript" src="../javascripts/form/form.js"></script> -->
+<link rel="stylesheet" href="css/css/bootstrap.min.css">
+<script type="text/javascript" src="js/angular.min.js"></script>
+<!-- <script type="text/javascript" src="js/angular-route.js"></script> -->
+<script src="controllers/controller.js"></script>
+<!-- <script src="controllers/testApp.js"></script> -->
+<script src="/socket.io/socket.io.js"></script>
+ 
+<title>表单测试</title>
+</head>
+<body>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">双向数据绑定</div>
+        </div>
+        <div class="panel-body">
+            <div class = "row ">
+                <div class="col-md-12">
+                    <form action="" class="form-horizontal" role="form" ng-controller="userInfoCtrl">
+                        <div class="form-group">
+                            <label class="col-md-2 control-lable">Email:</label>
+                            <div class = "col-md-4">
+                                <input type="email" class="form-control" placeholder="请输入邮箱地址" ng-model="userInfo.email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-lable">PassWord:</label>
+                            <div class = "col-md-4">
+                                <input type="password" class="form-control" placeholder="请输入password" ng-model="userInfo.password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="userInfo.autoLogin"> 自动登录
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button class="btn btn-default" ng-click="getFormData()">获取FormData</button>
+                                <button class="btn btn-default" ng-click="setFormData()">设置FormData</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+    <div ng-controller="AppCtrl">
+	{{testdata}}
+	</div>
+	 <div ng-controller="socketCtrl">
+	{{server_data}}
+	</div>
+</body>
+</html>
